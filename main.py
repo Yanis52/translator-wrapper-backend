@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 import bs4 as bs
 from urllib.request import urlopen, Request
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 @app.route('/translate', methods=['GET'])
 def translate():
     langue1 = request.args.get('langue1')
